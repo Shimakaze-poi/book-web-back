@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/web_alpha?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+server:
+  port: 8181
+  #SSL证书（可选）
+  #ssl:
+  #  key-store: classpath:
+  #  key-store-password:
+  #  key-store-type: JKS
+#RSA私钥
+key:
+  privateKey:
