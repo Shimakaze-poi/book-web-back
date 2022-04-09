@@ -44,6 +44,18 @@ public class ArticleHandler
         return articleRepository.findByTitleLike("%" + searchInformation.get("title") + "%", sort);
     }
 
+    @PostMapping("/user")
+    public List<ArticleList> user(@RequestBody LinkedHashMap<String, String> searchInformation)
+    {
+        return articleRepository.findByAuthorid(Integer.parseInt(searchInformation.get("id")), sort);
+    }
+
+    @PostMapping("/searchuser")
+    public List<ArticleList> searchUser(@RequestBody LinkedHashMap<String, String> searchInformation)
+    {
+        return articleRepository.findByAuthoridAndTitleLike(Integer.parseInt(searchInformation.get("id")), "%" + searchInformation.get("title") + "%", sort);
+    }
+
     @PostMapping("/delete")
     public void delete(@RequestBody LinkedHashMap<String, String> deleteMethod)
     {

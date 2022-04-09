@@ -9,4 +9,6 @@ import java.util.List;
 public interface ArticleRepository extends JpaRepository<ArticleList, Integer>
 {
     List<ArticleList> findByTitleLike(String title, Sort sort);
+    List<ArticleList> findByAuthorid(int id, Sort sort);
+    List<ArticleList> findByAuthoridAndTitleLike(int id, String title, Sort sort);
 }
