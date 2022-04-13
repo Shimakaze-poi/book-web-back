@@ -27,6 +27,12 @@ public class CommentHandler
         return commentRepository.findByContenttypeAndContentid(findMethod.get("contenttype"), Integer.parseInt(findMethod.get("contentid")), sort);
     }
 
+    @PostMapping("/finduser")
+    public List<CommentList> findUser(@RequestBody LinkedHashMap<String, String> findMethod)
+    {
+        return commentRepository.findByAuthorid(Integer.valueOf(findMethod.get("userid")), sort);
+    }
+
     @PostMapping("/add")
     public void add(@RequestBody CommentList commentList)
     {

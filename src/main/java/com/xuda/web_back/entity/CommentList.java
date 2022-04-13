@@ -17,4 +17,5 @@ public class CommentList
     private Integer contentid;
     private String comment, publishdate;
     private Integer authorid;
+    private String contentname;
 }
