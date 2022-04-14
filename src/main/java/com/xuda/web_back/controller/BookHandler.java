@@ -30,6 +30,12 @@ public class BookHandler
         return bookRepository.findByContenttype(findMethod.get("contenttype"), sort);
     }
 
+    @PostMapping("/findid")
+    public BookList findId(@RequestBody LinkedHashMap<String, String> findMethod)
+    {
+        return bookRepository.findFirstById(Integer.valueOf(findMethod.get("id")));
+    }
+
     @PostMapping("/rate")
     public void rate(@RequestBody LinkedHashMap<String, String> rateMethod)
     {

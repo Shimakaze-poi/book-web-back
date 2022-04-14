@@ -24,6 +24,12 @@ public class ArticleHandler
         return articleRepository.findAll(sort);
     }
 
+    @PostMapping("findid")
+    public ArticleList findId(@RequestBody LinkedHashMap<String, String> searchInformation)
+    {
+        return articleRepository.findFirstById(Integer.parseInt(searchInformation.get("id")));
+    }
+
     @PostMapping("/add")
     public void add(@RequestBody ArticleList articleList)
     {
